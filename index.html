@@ -48,12 +48,12 @@
                     <p v-if="mejorEstudiante()">
                         {{ mejorEstudiante().nombre }} - {{ mejorEstudiante().calificacion }}
                     </p>
+                    <p v-else>Sin estudiantes</p>
                     
                     <div class="dato">
                    <p>Mostrando {{ estudiantesFiltrados().length }} de {{ estudiantes.length }} estudiantes</p>
                    </div>
 
-                    <p v-else>Sin estudiantes</p>
                 </div>
 
             </div>
