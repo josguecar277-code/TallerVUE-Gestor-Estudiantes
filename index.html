@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gestor Estudiantes</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Gestor Estudiantes</h1>
+
+        <!-- ZONA PUNTO 1: Formulario (Juliana) -->
+
+        <!-- ZONA PUNTO 4: Resumen -->
+        <p>Total: {{ estudiantes.length }}</p>
+
+        <!-- ZONA PUNTO 3: Filtros -->
+
+        <!-- ZONA PUNTO 5: Mensajes vacíos y PUNTO 2: Lista -->
+
+        <!-- ZONA PUNTO 6: Borrar todo -->
+        <p v-for="e in estudiantes" :key="e.id">{{ e.nombre }} - {{ e.calificacion }}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
