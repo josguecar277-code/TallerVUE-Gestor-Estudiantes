@@ -150,6 +150,22 @@
 
         <!-- ZONA PUNTO 5: Mensajes vacíos y PUNTO 2: Lista -->
 
+        <section class="panel">
+  <h2>Lista de estudiantes</h2>
+
+  <div v-for="est in estudiantesFiltrados()" :key="est.id" class="fila">
+    <span>
+      {{ est.nombre }}
+      <span v-if="est.calificacion === 10">⭐</span>
+    </span>
+    <span>{{ est.carrera }}</span>
+    <span :class="colorNota(est.calificacion)">{{ est.calificacion }}</span>
+
+    <button @click="eliminarEstudiante(est.id)">Eliminar</button>
+    <button @click="actualizarCalificacion(est.id, 1)" :disabled="est.calificacion >= 10">+1</button>
+    <button @click="actualizarCalificacion(est.id, -1)" :disabled="est.calificacion <= 0"> −1</button>
+  </div>
+</section>
         <!-- ZONA PUNTO 6: Borrar todo -->
         <!-- <p v-for="e in estudiantes" :key="e.id">{{ e.nombre }} - {{ e.calificacion }}</p> -->
     </div>
