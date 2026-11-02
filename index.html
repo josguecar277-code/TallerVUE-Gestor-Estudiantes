@@ -17,10 +17,25 @@
 
         <!-- ZONA PUNTO 3: Filtros -->
 
+        <select v-model="filtroCarrera">
+        <option>Todas</option>
+       <option v-for="c in carreras" :key="c">{{ c }}</option>
+</select>
+
+     <input v-model="busqueda" placeholder="Buscar por nombre...">
+     
+
+     <select v-model="filtroEstado">
+     <option value="todos">Todos</option>
+     <option value="aprobados">Aprobados</option>
+     <option value="reprobados">Reprobados</option>
+</select>
+
         <!-- ZONA PUNTO 5: Mensajes vacíos y PUNTO 2: Lista -->
 
         <!-- ZONA PUNTO 6: Borrar todo -->
-        <p v-for="e in estudiantes" :key="e.id">{{ e.nombre }} - {{ e.calificacion }}</p>
+      
+        <p v-for="e in estudiantesFiltrados" :key="e.id">{{ e.nombre }} - {{ e.calificacion }}</p>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

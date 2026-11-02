@@ -26,7 +26,22 @@ createApp({
     };
   },
 
+computed: {
+  estudiantesFiltrados() {
+    return this.estudiantes.filter(e => {
+      const okCarrera = this.filtroCarrera === "Todas" || e.carrera === this.filtroCarrera;
+      const okNombre = e.nombre.toLowerCase().includes(this.busqueda.toLowerCase());
+      const okEstado =
+        this.filtroEstado === "todos" ||
+        (this.filtroEstado === "aprobados" && e.calificacion >= 5) ||
+        (this.filtroEstado === "reprobados" && e.calificacion < 5);
+      return okCarrera && okNombre && okEstado;
+    });
+  }
+},
+
   methods: {
     // metodos joanthan (punto 3 en adelante)
+    
   }
 }).mount("#app");
