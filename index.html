@@ -15,7 +15,7 @@
         </header>
 
 
-        <!-- RESUMEN -->
+        <!-- Punto4: RESUMEN -->
         <section class="panel">
             <h2>Resumen del grupo</h2>
             
@@ -55,7 +55,7 @@
             </div>
         </section>
 
-        <!-- FORMULARIO -->
+        <!-- Punto1: FORMULARIO -->
 
         <section class="panel">
             <h2>Registrar estudiante</h2>
@@ -101,7 +101,7 @@
         </section>
 
 
-        <!-- FILTROS -->
+        <!-- Punto3: FILTROS -->
 
          <section class="panel">
 
@@ -141,17 +141,46 @@
             </div>
          </section>
 
-        <!-- ZONA PUNTO 1: Formulario (Juliana) -->
+       
 
-        <!-- ZONA PUNTO 4: Resumen -->
-        <!-- <p>Total: {{ estudiantes.length }}</p> -->
+        <!-- ZONA PUNTO 5: Mensajes vacíos  -->
 
-        <!-- ZONA PUNTO 3: Filtros -->
+        <section class="panel">
+  <h2>Lista de estudiantes</h2>
 
-        <!-- ZONA PUNTO 5: Mensajes vacíos y PUNTO 2: Lista -->
+  <p v-if="estudiantes.length === 0">Aún no hay estudiantes</p>
 
-        <!-- ZONA PUNTO 6: Borrar todo -->
-        <!-- <p v-for="e in estudiantes" :key="e.id">{{ e.nombre }} - {{ e.calificacion }}</p> -->
+  <p v-else-if="estudiantesFiltrados().length === 0">No hay estudiantes con esos filtros</p>
+
+  <div v-else>
+
+   <!-- Punto2: Lista con colores,eliminar +1, -1 -->
+
+  <div v-for="est in estudiantesFiltrados()" :key="est.id" class="fila">
+    <span>
+      {{ est.nombre }}
+      <span v-if="est.calificacion === 10">⭐</span>
+    </span>
+    <span>{{ est.carrera }}</span>
+    <span :class="colorNota(est.calificacion)">{{ est.calificacion }}</span>
+
+    <button @click="eliminarEstudiante(est.id)">Eliminar</button>
+    <button @click="actualizarCalificacion(est.id, 1)" :disabled="est.calificacion >= 10">+1</button>
+    <button @click="actualizarCalificacion(est.id, -1)" :disabled="est.calificacion <= 0"> −1</button>
+  </div>
+
+
+  <!-- Punto6: Borrar todo -->
+
+  <button
+  @click="borrarTodo()"
+  :disabled="estudiantes.length === 0"
+  v-show="estudiantes.length > 0">
+  Borrar todo
+</button>
+
+</section>
+        
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
