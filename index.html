@@ -15,7 +15,7 @@
         </header>
 
 
-        <!-- RESUMEN -->
+        <!-- Punto4: RESUMEN -->
         <section class="panel">
             <h2>Resumen del grupo</h2>
             
@@ -55,7 +55,7 @@
             </div>
         </section>
 
-        <!-- FORMULARIO -->
+        <!-- Punto1: FORMULARIO -->
 
         <section class="panel">
             <h2>Registrar estudiante</h2>
@@ -101,7 +101,7 @@
         </section>
 
 
-        <!-- FILTROS -->
+        <!-- Punto3: FILTROS -->
 
          <section class="panel">
 
@@ -141,14 +141,9 @@
             </div>
          </section>
 
-        <!-- ZONA PUNTO 1: Formulario (Juliana) -->
+       
 
-        <!-- ZONA PUNTO 4: Resumen -->
-        <!-- <p>Total: {{ estudiantes.length }}</p> -->
-
-        <!-- ZONA PUNTO 3: Filtros -->
-
-        <!-- ZONA PUNTO 5: Mensajes vacíos y PUNTO 2: Lista -->
+        <!-- ZONA PUNTO 5: Mensajes vacíos  -->
 
         <section class="panel">
   <h2>Lista de estudiantes</h2>
@@ -159,6 +154,7 @@
 
   <div v-else>
 
+   <!-- Punto2: Lista con colores,eliminar +1, -1 -->
 
   <div v-for="est in estudiantesFiltrados()" :key="est.id" class="fila">
     <span>
@@ -172,9 +168,19 @@
     <button @click="actualizarCalificacion(est.id, 1)" :disabled="est.calificacion >= 10">+1</button>
     <button @click="actualizarCalificacion(est.id, -1)" :disabled="est.calificacion <= 0"> −1</button>
   </div>
+
+
+  <!-- Punto6: Borrar todo -->
+
+  <button
+  @click="borrarTodo()"
+  :disabled="estudiantes.length === 0"
+  v-show="estudiantes.length > 0">
+  Borrar todo
+</button>
+
 </section>
-        <!-- ZONA PUNTO 6: Borrar todo -->
-        <!-- <p v-for="e in estudiantes" :key="e.id">{{ e.nombre }} - {{ e.calificacion }}</p> -->
+        
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
