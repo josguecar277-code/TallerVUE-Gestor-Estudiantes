@@ -153,6 +153,13 @@
         <section class="panel">
   <h2>Lista de estudiantes</h2>
 
+  <p v-if="estudiantes.length === 0">Aún no hay estudiantes</p>
+
+  <p v-else-if="estudiantesFiltrados().length === 0">No hay estudiantes con esos filtros</p>
+
+  <div v-else>
+
+
   <div v-for="est in estudiantesFiltrados()" :key="est.id" class="fila">
     <span>
       {{ est.nombre }}
