@@ -1,8 +1,57 @@
-.verde { color: green; }
-.naranja { color: orange; }
-.rojo { color: red; }
+.verde {
+     color: rgb(22, 228, 22); 
+     text-decoration: underline}
+
+.naranja { 
+    color: rgb(255, 151, 16);
+    text-decoration: underline}
+
+.rojo { 
+    color: red;
+     text-decoration: underline;}
 .error { color: red; }
 .activo { background-color: steelblue; color: white; }
 
 
 
+body { 
+    font-family: Arial, sans-serif; 
+    background-image: url(gato-lince.png);
+    background-size:cover;
+    
+    
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+.titulo{
+    color: white;  
+  
+}
+
+
+.panel {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: rgb(223, 224, 224, 0.6);
+    border-radius: 2rem;
+}
+.contenedor { max-width: 900px;
+     margin: 0 auto; 
+     padding: 1rem; }
+
+.resumen { display: grid;
+     grid-template-columns: repeat(5,1fr);
+     gap: 12px; }
+
+
+  .fila {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 0.5fr auto auto auto;
+  gap: 4px;
+  align-items: center;
+  padding: 8px ;
+  
+}   
