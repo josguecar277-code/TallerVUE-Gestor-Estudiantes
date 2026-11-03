@@ -49,3 +49,11 @@ aplicar filtros y consultar estadísticas del grupo.
 Los estudiantes se almacenan en memoria mediante
 data() de Vue. No se utiliza API, base de datos
 ni almacenamiento persistente.
+
+## Captura
+![Captura de la aplicación](captura.png)
+
+## Integrantes
+
+Jonathan Guerrero
+Juliana Rodriguez

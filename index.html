@@ -9,7 +9,7 @@
 <body>
     <div id="app" class="contenedor">
 
-        <header>
+        <header class="titulo">
             <h1>Gestor de Estudiantes</h1>
             <p>Administra estudiantes y sus calificaciones</p>
         </header>
@@ -48,8 +48,12 @@
                     <p v-if="mejorEstudiante()">
                         {{ mejorEstudiante().nombre }} - {{ mejorEstudiante().calificacion }}
                     </p>
-
                     <p v-else>Sin estudiantes</p>
+                    
+                    <div class="dato">
+                   <p>Mostrando {{ estudiantesFiltrados().length }} de {{ estudiantes.length }} estudiantes</p>
+                   </div>
+
                 </div>
 
             </div>
